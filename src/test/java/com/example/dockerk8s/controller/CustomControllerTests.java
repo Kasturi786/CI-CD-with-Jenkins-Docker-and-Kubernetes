@@ -25,7 +25,6 @@ public class CustomControllerTests {
     @MockBean
     private CustomService customService;
 
-
     @Test
     public void greetingShouldReturnMessageFromService() throws Exception {
         when(customService.greeting()).thenReturn("Hello, Mock");
