@@ -6,11 +6,11 @@ pipeline {
   }
   stages {
 
-        stage ('Build') {
-      steps {
-        //bat 'mvn -DskipTests=true clean package'
-      }
-    }
+   //     stage ('Build') {
+   //  steps {
+   //bat 'mvn -DskipTests=true clean package'
+  //    }
+  //  }
     
         stage ('Test') {
       steps {
