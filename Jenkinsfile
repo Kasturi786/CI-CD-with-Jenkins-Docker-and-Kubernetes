@@ -18,6 +18,11 @@ pipeline {
       }
     }
     
+    stage ('Build Docker image') {
+      steps {
+        bat 'docker build -t dockerk8s .'
+      }
+    }
     
   }
 }
