@@ -29,7 +29,7 @@ pipeline {
         script {
           withCredentials([string(credentialsId: '', variable: 'dockerhubpwd')]) {
             sh 'docker login -u kasturi786 -p ${dockerhubpwd}'
-            sh 'docker push dockerk8s
+            sh 'docker push dockerk8s'
          }
         
         }
