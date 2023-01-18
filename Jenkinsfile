@@ -20,7 +20,19 @@ pipeline {
     
     stage ('Build Docker image') {
       steps {
-        sh 'docker build -t dockerk8s .'
+        sh 'docker build -t kasturi786/dockerk8s .'
+      }
+    }
+    
+    stage ('Push Docker image') {
+      steps {
+        script {
+          withCredentials([string(credentialsId: '', variable: 'dockerhubpwd')]) {
+            sh 'docker login -u kasturi786 -p ${dockerhubpwd}'
+            sh 'docker push kasturi786/dockerk8s
+         }
+        
+        }
       }
     }
     
